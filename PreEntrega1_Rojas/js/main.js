@@ -1,5 +1,5 @@
 // Programa Conversor de divisas
-// Ver cambios utilizados
+// Ver cambios utilizados en el ReadMe
 
 alert("Calculadora de Divisas");
 let textoTipoMoneda ="Ingrese la moneda a la cual quiere hacer el cambio: (ESC para finalizar)\n\n";
@@ -15,20 +15,25 @@ textoTipoMoneda += "9 - SOL (Solana)\n";
 textoTipoMoneda += "10 - BNB (BNB)";
 
 let tipoMoneda = prompt(textoTipoMoneda);
-console.log("La moneda elegida es: " + tipoMoneda);
+// console.log("La moneda elegida es: " + tipoMoneda);
 
 while (tipoMoneda != "ESC"){
-    
-    console.log(tipoMoneda);
-    let pesos = parseFloat(prompt("Ingrese la cantidad de pesos Argentinos que quiere cambiar: $"));
-    console.log(pesos);
-    let CambioMoneda = SeleccionMoneda(tipoMoneda, pesos);
-    console.log(CambioMoneda);
+
+    if(tipoMoneda.toUpperCase() == "ESC"){
+		break;
+
+	}else{
+        
+        let pesos = parseFloat(prompt("Ingrese la cantidad de pesos Argentinos que quiere cambiar: $"));
+        // console.log(pesos);
+        SeleccionMoneda(tipoMoneda, pesos);
+        
+    }
 
     tipoMoneda = prompt(textoTipoMoneda);
 }
 
-console.log("Programa Finalizado");
+// console.log("Programa Finalizado");
 alert("Programa Finalizado");
 
 function SeleccionMoneda(tipoMoneda , pesos){
