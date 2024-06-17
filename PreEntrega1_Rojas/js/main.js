@@ -121,37 +121,37 @@ function CambioUSD(pesos){
         alert("Seleccionó Dólar Oficial");
         calculoUSD = pesos / 922 ;
         console.log("El total es : $" + calculoUSD+ "USD");
-        alert("El total es : $ " + calculoUSD.toFixed(2) + "USD");
+        alert("El total es : $ " + calculoUSD.toFixed(2) + " USD");
         
     }else if (tipoUSD == 2) {
         alert("Seleccionó Dólar Blue");
         calculoUSD = pesos / 1280 ;
         console.log("El total es : $" + calculoUSD+ "USD");
-        alert("El total es : $ " + calculoUSD.toFixed(2) + "USD");
+        alert("El total es : $ " + calculoUSD.toFixed(2) + " USD");
 
     }else if (tipoUSD == 3) {
         alert("Seleccionó Dólar Tarjeta");
         calculoUSD = pesos / 1475 ;
         console.log("El total es : $" + calculoUSD+ "USD");
-        alert("El total es : $ " + calculoUSD.toFixed(2) + "USD");
+        alert("El total es : $ " + calculoUSD.toFixed(2) + " USD");
 
     }else if (tipoUSD == 4) {
         alert("Seleccionó Dólar MEP");
         calculoUSD = pesos / 1245 ;
         console.log("El total es : $" + calculoUSD+ "USD");
-        alert("El total es : $ " + calculoUSD.toFixed(2) + "USD");
+        alert("El total es : $ " + calculoUSD.toFixed(2) + " USD");
 
     }else if (tipoUSD == 5) {
         alert("Seleccionó Dólar CCL");
         calculoUSD = pesos / 1258 ;
         console.log("El total es : $" + calculoUSD+ "USD");
-        alert("El total es : $ " + calculoUSD.toFixed(2) + "USD");
+        alert("El total es : $ " + calculoUSD.toFixed(2) + " USD");
 
     }else{
         alert("Seleccionó Dólar Crypto");
         calculoUSD = pesos / 1299 ;
         console.log("El total es de: $" + calculoUSD + "USD");
-        alert("El total es : $ " + calculoUSD.toFixed(2) + "USD");
+        alert("El total es : $ " + calculoUSD.toFixed(2) + " USD");
 
     }
 
@@ -174,13 +174,13 @@ function CambioEUR(pesos){
         alert("Seleccionó Euro Oficial");
         calculoEUR = pesos / 968.44 ;
         console.log("El total es : €" + calculoEUR + "EUR");
-        alert("El total es : € " + calculoEUR.toFixed(2) + "EUR");
+        alert("El total es : € " + calculoEUR.toFixed(2) + " EUR");
         
     }else{
         alert("Seleccionó Euro Blue");
         calculoEUR = pesos / 1367.81 ;
         console.log("El total es : €" + calculoEUR + "EUR");
-        alert("El total es : € " + calculoEUR.toFixed(2) + "EUR");
+        alert("El total es : € " + calculoEUR.toFixed(2) + " EUR");
     }
     
     return calculoEUR;
@@ -192,7 +192,7 @@ function CambioGBP(pesos){
     alert("Seleccionó Libra Esterlina");
     calculoGBP = pesos / 1146.02 ;
     console.log("El total es : £" + calculoGBP + "GBP");
-    alert("El total es : £ " + calculoGBP.toFixed(2) + "GBP");
+    alert("El total es : £ " + calculoGBP.toFixed(2) + " GBP");
 
     return calculoGBP;
 }
@@ -203,7 +203,7 @@ function CambioJPY(pesos){
     alert("Seleccionó Yen Japonés");
     calculoJPY = pesos / 5.72 ;
     console.log("El total es : ¥" + calculoJPY + "JPY");
-    alert("El total es : ¥ " + calculoJPY.toFixed(2) + "JPY");
+    alert("El total es : ¥ " + calculoJPY.toFixed(2) + " JPY");
     
     return calculoJPY;
 }
@@ -214,7 +214,7 @@ function CambioRUB(pesos){
     alert("Seleccionó Rublo Ruso");
     calculoRUB = pesos /  10.21 ;
     console.log("El total es : ₽" + calculoRUB + "RUB");
-    alert("El total es : ₽ " + calculoRUB.toFixed(2) + "RUB");
+    alert("El total es : ₽ " + calculoRUB.toFixed(2) + " RUB");
     
     
     return calculoRUB;
@@ -227,7 +227,7 @@ function CambioINR(pesos){
     alert("Seleccionó Rupia India");
     calculoINR = pesos / 10.81 ;
     console.log("El total es : ₹" + calculoINR + "INR");
-    alert("El total es : ₹ " + calculoINR.toFixed(2) + "INR");
+    alert("El total es : ₹ " + calculoINR.toFixed(2) + " INR");
     
     return calculoINR;
 }
@@ -238,7 +238,7 @@ function CambioBTC(pesos){
     alert("Seleccionó Bitcoin");
     calculoBTC = pesos / 59114727.87 ;
     console.log("El total es : ₿ " + calculoBTC + "BTC");
-    alert("El total es : ₿ " + calculoBTC.toFixed(8) + "BTC");
+    alert("El total es : ₿ " + calculoBTC.toFixed(8) + " BTC");
     
     return calculoBTC;
 }
@@ -249,7 +249,7 @@ function CambioETH(pesos){
     alert("Seleccionó Ethereum");
     calculoETH = pesos / 3161360.30 ;
     console.log("El total es : " + calculoETH + "ETH");
-    alert("El total es :" + calculoETH.toFixed(8) + "ETH");
+    alert("El total es : " + calculoETH.toFixed(8) + " ETH");
     
     return calculoETH;
 }
@@ -260,7 +260,7 @@ function CambioSOL(pesos){
     alert("Seleccionó Solana");
     calculoSOL = pesos /  127366.88 ;
     console.log("El total es :" + calculoSOL + "SOL");
-    alert("El total es :" + calculoSOL.toFixed(8) + "SOL");
+    alert("El total es : " + calculoSOL.toFixed(8) + " SOL");
     
     return calculoSOL;
 }
@@ -271,7 +271,7 @@ function CambioBNB(pesos){
     alert("Seleccionó BNB");
     calculoBNB = pesos / 127366.88 ;
     console.log("El total es :" + calculoBNB + "BNB");
-    alert("El total es :" + calculoBNB.toFixed(8) + "BNB");
+    alert("El total es : " + calculoBNB.toFixed(8) + " BNB");
 
     return calculoBNB;
 }
