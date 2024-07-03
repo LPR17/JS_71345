@@ -3,6 +3,11 @@
 // Simulador de conversor de divisas (Pesos Argentinos a otra divisa)
 // Ver instrucciones de uso y cambios utilizados en el ReadMe
 
+
+/* -------------------------------------------------------------------------------------------------
+            Programa Principal
+ -------------------------------------------------------------------------------------------------*/
+
 alert("Calculadora de Divisas");
 let textoTipoMoneda ="Ingrese la moneda a la cual quiere hacer el cambio: (ESC para finalizar)\n\n";
 textoTipoMoneda += "1 - USD (Dólar Estadounidense)\n";
@@ -39,7 +44,13 @@ while (tipoMoneda != "ESC"){
 // console.log("Programa Finalizado");
 alert("Programa Finalizado");
 
-// Objetos con la informacíón correspondiente de cada divisa (Nombre, código, símbolo y cambio )
+/* -------------------------------------------------------------------------------------------------
+            Funciones
+ -------------------------------------------------------------------------------------------------*/
+
+/* -------------------------------------------------------------------------------------------------
+    Objetos con la informacíón correspondiente de cada divisa (Nombre, código, símbolo y cambio ) 
+ -------------------------------------------------------------------------------------------------*/
 let divisa1 = {
     nombre: "Dólar estadounidense",
     codigo: "USD",
@@ -120,7 +131,9 @@ let divisa10 = {
     cambio: 127366.88
 };
 
-// Array con todas las divisas
+/* -------------------------------------------------------------------------------------------------
+                        Array con todas las divisas 
+ ------------------------------------------------------------------------------------------------- */
 let divisas = [
     divisa1, 
     divisa2, 
