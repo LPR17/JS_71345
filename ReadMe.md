@@ -1,6 +1,6 @@
 # Simuladro Interactivo: Conversor de Divisas
 
- Permite convertir cantidades de pesos argentinos entre diferentes monedas utilizando valores estáticos predefinidos para cada una. En este caso se utiliza el cambio correspondiente al día 17/06/2024
+ Permite convertir cantidades de pesos argentinos entre diferentes monedas utilizando valores estáticos predefinidos para cada una. En este caso se utiliza el cambio correspondiente al día 03/07/2024
 
 ## Funcionalidades
 
@@ -52,5 +52,6 @@
 
     - Integrar una API para consumir cotizaciones actualizadas para cada tipo de divisa
     - Mejor organización de código para mejor legibilidad
-    - Verificacion para casos em lños que se ingresen valores que no correspondan
+    - Verificacion para casos en los que se ingresen valores que no correspondan
     - Poder realizar conversiones de otras monedas , no solo de pesos argentinos
+    - Mejorar diseño y estructura de la página
