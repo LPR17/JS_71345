@@ -9,26 +9,26 @@
 
     - Dólar estadounidense (USD):
 
-        - Dólar Oficial => 1 USD = 922 pesos argentinos
-        - Dólar Blue => 1 USD = 1280 pesos argentinos
-        - Dólar Tarjeta => 1 USD = 1475 pesos argentinos
-        - Dólar MEP => 1 USD = 1245 pesos argentinos
-        - Dólar CCL => 1 USD = 1258 pesos argentinos
-        - Dóalr Crypto => 1 USD = 1299 pesos argentinos
+        - Dólar Oficial => 1 USD = 934.50 pesos argentinos
+        - Dólar Blue => 1 USD = 1440 pesos argentinos
+        - Dólar Tarjeta => 1 USD = 1495.20 pesos argentinos
+        - Dólar MEP => 1 USD = 1385.25 pesos argentinos
+        - Dólar CCL => 1 USD = 1383.60 pesos argentinos
+        - Dóalr Crypto => 1 USD = 1418 pesos argentinos
 
     - Euro (EUR):
 
-        - Euro Oficial => 1 EUR = 968,44 pesos argentinos
-        - Euro Blue => 1 EUR = 1367,81 pesos argentinos
+        - Euro Oficial => 1 EUR = 1030 pesos argentinos
+        - Euro Blue => 1 EUR = 1435 pesos argentinos
 
-    - Libra esterlina (GBP) => 1 GBP = 1146,02 pesos argentinos
-    - Yen japonés (JPY) => 1 JPY = 5,72 pesos argentinos
-    - Rublo Ruso (RUB) => 1 RUB = 10,21 pesos argentinos
-    - Rupia India (INR) => 1 INR = 10,81 pesos argentinos
-    - Bitcoin (BTC) => 1 BTC = 59114727,87 pesos argentinos
-    - Ethereum (ETH) => 1 ETH = 3161360,30 pesos argentinos
-    - Solana (SOL) => 1 SOL = 127366,88 pesos argentinos
-    - BNB (BNB) => 1 BNB = 127366,88 pesos argentinos
+    - Libra esterlina (GBP) => 1 GBP = 1176.49 pesos argentinos
+    - Yen japonés (JPY) => 1 JPY = 5,71 pesos argentinos
+    - Rublo Ruso (RUB) => 1 RUB = 10,47 pesos argentinos
+    - Rupia India (INR) => 1 INR = 10,99 pesos argentinos
+    - Bitcoin (BTC) => 1 BTC = 51058504,70 pesos argentinos
+    - Ethereum (ETH) => 1 ETH = 2716349,52 pesos argentinos
+    - Solana (SOL) => 1 SOL = 124909 pesos argentinos
+    - BNB (BNB) => 1 BNB = 458780 pesos argentinos
     
 
 

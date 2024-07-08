@@ -3,6 +3,104 @@
 // Simulador de conversor de divisas (Pesos Argentinos a otra divisa)
 // Ver instrucciones de uso y cambios utilizados en el ReadMe
 
+/* -------------------------------------------------------------------------------------------------
+    Objetos con la informacíón correspondiente de cada divisa (Nombre, código, símbolo y cambio al 03/07/2024 ) 
+ -------------------------------------------------------------------------------------------------*/
+ let USD = {
+    nombre: "Dólar estadounidense",
+    codigo: "USD",
+    simbolo: " $ ",
+    cambio: {
+        oficial: 934.50,
+        blue: 1440,
+        tarjeta: 1495.20,
+        MEP: 1385.25,
+        CCL: 1383.60,
+        crypto: 1418
+    }
+};
+
+let EUR = {
+    nombre: "Euro",
+    codigo: "EUR",
+    simbolo: " € ",
+    cambio: {
+        oficial: 1030,
+        blue: 1435
+    }
+};
+
+let GBP = {
+    nombre: "Libra esterlina",
+    codigo: "GBP",
+    simbolo: " £ ",
+    cambio: 1176.49
+};
+
+let JPY = {
+    nombre: "Yen Japonés",
+    codigo: "JPY",
+    simbolo: " ¥ ",
+    cambio: 5.71
+};
+
+let RUB = {
+    nombre: "Rublo Ruso",
+    codigo: "RUB",
+    simbolo: " ₽ ",
+    cambio: 10.47
+};
+
+let INR = {
+    nombre: "Rupia India",
+    codigo: "INR",
+    simbolo: " ₹ ",
+    cambio: 10.99
+};
+
+let BTC = {
+    nombre: "Bitcoin",
+    codigo: "BTC",
+    simbolo: " ₿ ",
+    cambio: 51058504.70
+};
+
+let ETH = {
+    nombre: "Ethereum",
+    codigo: "ETH",
+    simbolo: " Ξ ",
+    cambio: 2716349.52
+};
+
+let SOL = {
+    nombre: "Solana",
+    codigo: "SOL",
+    simbolo: "",
+    cambio: 124909
+};
+
+let BNB = {
+    nombre: "BNB",
+    codigo: "BNB",
+    simbolo: "",
+    cambio: 458780
+};
+
+/* -------------------------------------------------------------------------------------------------
+                        Array con todas las divisas 
+ ------------------------------------------------------------------------------------------------- */
+const divisas = [
+    USD, 
+    EUR,
+    GBP, 
+    JPY, 
+    RUB, 
+    INR, 
+    BTC, 
+    ETH, 
+    SOL, 
+    BNB
+];
 
 /* -------------------------------------------------------------------------------------------------
             Programa Principal
@@ -30,11 +128,14 @@ while (tipoMoneda != "ESC"){
     if(tipoMoneda.toUpperCase() == "ESC"){
 		break;
 
-	}else{
+	}else if (0 < tipoMoneda && tipoMoneda< 11){
         
         let pesos = parseFloat(prompt("Ingrese la cantidad de pesos Argentinos (ARS) que quiere cambiar: $"));
         // console.log(pesos);
-        SeleccionMoneda(tipoMoneda, pesos);
+        SeleccionMoneda(tipoMoneda, pesos, divisas);
+        
+    }else{
+        alert("No ha ingresado un valor permitido, vuelva a intentar");
         
     }
 
@@ -47,102 +148,37 @@ alert("Programa Finalizado");
 /* -------------------------------------------------------------------------------------------------
             Funciones
  -------------------------------------------------------------------------------------------------*/
+function SeleccionMoneda(tipoMoneda, pesos, divisas){
+    let divisaIndex = tipoMoneda -1 ;
+    
 
-/* -------------------------------------------------------------------------------------------------
-    Objetos con la informacíón correspondiente de cada divisa (Nombre, código, símbolo y cambio ) 
- -------------------------------------------------------------------------------------------------*/
-let divisa1 = {
-    nombre: "Dólar estadounidense",
-    codigo: "USD",
-    simbolo: " $ ",
-    cambio: {
-        oficial: 922,
-        blue: 1280,
-        tarjeta: 1475,
-        MEP: 1245,
-        CCL: 1258,
-        crypto: 1299
-    }
-};
+    
 
-let divisa2 = {
-    nombre: "Euro",
-    codigo: "EUR",
-    simbolo: " € ",
-    cambio: {
-        oficial: 968.44,
-        blue: 1367.81
-    }
-};
+}
 
-let divisa3 = {
-    nombre: "Libra esterlina",
-    codigo: "GBP",
-    simbolo: " £ ",
-    cambio: 1146.02
-};
+function Cambio(pesos){
 
-let divisa4 = {
-    nombre: "Yen Japonés",
-    codigo: "JPY",
-    simbolo: " ¥ ",
-    cambio: 5.72
-};
+}
 
-let divisa5 = {
-    nombre: "Rublo Ruso",
-    codigo: "RUB",
-    simbolo: " ₽ ",
-    cambio: 10.21
-};
 
-let divisa6 = {
-    nombre: "Rupia India",
-    codigo: "INR",
-    simbolo: " ₹ ",
-    cambio: 10.81
-};
 
-let divisa7 = {
-    nombre: "Bitcoin",
-    codigo: "BTC",
-    simbolo: " ₿ ",
-    cambio: 59114727.87
-};
+/*IEDEA
 
-let divisa8 = {
-    nombre: "Ethereum",
-    codigo: "ETH",
-    simbolo: " Ξ ",
-    cambio: 3161360.30
-};
+// Función para convertir una cantidad de una moneda a otra
+function convertirDivisas(cantidad, monedaOrigen, monedaDestino) {
+    let tipoCambioOrigen = monedas.find(moneda => moneda.codigo === monedaOrigen).tipoCambio;
+    let tipoCambioDestino = monedas.find(moneda => moneda.codigo === monedaDestino).tipoCambio;
+    
+    let cantidadEnEuro = cantidad / tipoCambioOrigen;
+    let cantidadConvertida = cantidadEnEuro * tipoCambioDestino;
+    
+    return cantidadConvertida.toFixed(2);
+}
 
-let divisa9 = {
-    nombre: "Solana",
-    codigo: "SOL",
-    simbolo: "",
-    cambio: 127366.88
-};
+// Ejemplo de uso de la función de conversión
+let cantidadConvertida = convertirDivisas(100, "USD", "EUR");
+console.log(`100 USD son aproximadamente ${cantidadConvertida} EUR`);
 
-let divisa10 = {
-    nombre: "BNB",
-    codigo: "BNB",
-    simbolo: "",
-    cambio: 127366.88
-};
 
-/* -------------------------------------------------------------------------------------------------
-                        Array con todas las divisas 
- ------------------------------------------------------------------------------------------------- */
-let divisas = [
-    divisa1, 
-    divisa2, 
-    divisa3, 
-    divisa4, 
-    divisa5, 
-    divisa6, 
-    divisa7, 
-    divisa8, 
-    divisa9, 
-    divisa10
-];
+
+*/
