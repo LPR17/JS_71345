@@ -207,20 +207,17 @@ function Cambio(pesos, tipoMonedaUpper, divisas, tipoCambio){
         alert("Seleccionó " + cotizacion.nombre);
         alert("$" + pesos + " pesos son :" + cotizacion.simbolo + " " + cambio.toFixed(8) + " " + cotizacion.codigo);
 
-        historial(pesos,cotizacion.simbolo, cambio.toFixed(8), cotizacion.codigo);
     }else if(tipoMonedaUpper === "USD" || tipoMonedaUpper === "EUR"){
         let cotizacion = divisas.find((cot) => cot.codigo === tipoMonedaUpper);
         let cambio = pesos / cotizacion.cambio[tipoCambio];
         alert("Seleccionó " + cotizacion.nombre + " " + tipoCambio);
         alert("$" + pesos + " pesos son :" + cotizacion.simbolo + " " + cambio.toFixed(2) + " " + cotizacion.codigo + " " + tipoCambio);
 
-        historial(pesos,cotizacion.simbolo, cambio.toFixed(2), cotizacion.codigo);
     }else{
         let cotizacion = divisas.find((cot) => cot.codigo === tipoMonedaUpper);
         let cambio = pesos / cotizacion.cambio ;
         alert("Seleccionó " + cotizacion.nombre);
         alert("$" + pesos + " pesos son :" + cotizacion.simbolo + " " + cambio.toFixed(2) + " " + cotizacion.codigo);
 
-        historial(pesos,cotizacion.simbolo, cambio.toFixed(2), cotizacion.codigo);
     }
 }
