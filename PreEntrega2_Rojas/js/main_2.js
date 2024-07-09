@@ -84,7 +84,8 @@ const divisas = [
  -------------------------------------------------------------------------------------------------*/
 
 alert("Calculadora de Divisas");
-let textoTipoMoneda ="Escriba el Código de la moneda a la cual quiere hacer el cambio: (ESC para finalizar)\n\n";
+let textoTipoMoneda ="Escriba el Código de la moneda a la cual quiere hacer el cambio: (ESC para finalizar)\n";
+textoTipoMoneda += "Por ejemplo: RUB\n\n";
 textoTipoMoneda += "USD (Dólar Estadounidense)\n";
 textoTipoMoneda += "EUR (Euro)\n";
 textoTipoMoneda += "GBP (Libra Esterlina)\n";
@@ -199,19 +200,27 @@ function SeleccionEUR(tipoMonedaUpper, pesos, divisas){
 
 }
 
-function Cambio(pesos, tipoMonedaUpper, divisas){
+function Cambio(pesos, tipoMonedaUpper, divisas, tipoCambio){
     if(tipoMonedaUpper === "BTC" || tipoMonedaUpper === "ETH" || tipoMonedaUpper === "SOL" || tipoMonedaUpper === "BNB"){
         let cotizacion = divisas.find((cot) => cot.codigo === tipoMonedaUpper);
         let cambio = pesos / cotizacion.cambio ;
         alert("Seleccionó " + cotizacion.nombre);
         alert("$" + pesos + " pesos son :" + cotizacion.simbolo + " " + cambio.toFixed(8) + " " + cotizacion.codigo);
 
-    }else if(tipoMonedaUpper ==="USD" || tipoMonedaUpper === "EUR"){
+        historial(pesos,cotizacion.simbolo, cambio.toFixed(8), cotizacion.codigo);
+    }else if(tipoMonedaUpper === "USD" || tipoMonedaUpper === "EUR"){
+        let cotizacion = divisas.find((cot) => cot.codigo === tipoMonedaUpper);
+        let cambio = pesos / cotizacion.cambio[tipoCambio];
+        alert("Seleccionó " + cotizacion.nombre + " " + tipoCambio);
+        alert("$" + pesos + " pesos son :" + cotizacion.simbolo + " " + cambio.toFixed(2) + " " + cotizacion.codigo + " " + tipoCambio);
 
+        historial(pesos,cotizacion.simbolo, cambio.toFixed(2), cotizacion.codigo);
     }else{
         let cotizacion = divisas.find((cot) => cot.codigo === tipoMonedaUpper);
         let cambio = pesos / cotizacion.cambio ;
         alert("Seleccionó " + cotizacion.nombre);
         alert("$" + pesos + " pesos son :" + cotizacion.simbolo + " " + cambio.toFixed(2) + " " + cotizacion.codigo);
+
+        historial(pesos,cotizacion.simbolo, cambio.toFixed(2), cotizacion.codigo);
     }
 }

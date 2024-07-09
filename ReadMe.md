@@ -5,7 +5,7 @@
 ## Funcionalidades
 
 - **Conversión de Divisas:** Permite convertir una cantidad de pesos argentinos a otra seleccionada moneda seleccionada (Por el momento se utilizan valores ya predefinidos para cada moneda).
-- **Listado de Monedas Utilizadas:** Incluye las siguientes monedas con sus respectivos códigos y cotizaciones al 17/06/2024 :
+- **Listado de Monedas Utilizadas:** Incluye las siguientes monedas con sus respectivos códigos y cotizaciones al 08/07/2024 :
 
     - Dólar estadounidense (USD):
 
@@ -55,3 +55,4 @@
     - Verificacion para casos en los que se ingresen valores que no correspondan
     - Poder realizar conversiones de otras monedas , no solo de pesos argentinos
     - Mejorar diseño y estructura de la página
+    - Agregar DOM y Eventos
