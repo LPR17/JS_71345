@@ -107,121 +107,48 @@
     }
 ];
 
+
 /* -------------------------------------------------------------------------------------------------
-            Programa Principal
+            Eventos
  -------------------------------------------------------------------------------------------------*/
+let boton = document.getElementById("boton");
 
-while (tipoMoneda.toUpperCase() !== "ESC") {
-    
-    let tipoMonedaUpper = tipoMoneda.toUpperCase().trim();
-    
-    // Validamos que el código de la divisa ingresada por teclado exista en el array
-    let divisaSeleccionada = divisas.find(divisa => divisa.codigo === tipoMonedaUpper);
-
-    if (tipoMonedaUpper === "ESC") {
-        break;
-
-    } else if (divisaSeleccionada) {
-
-        let pesos = parseFloat(prompt("Ingrese la cantidad de pesos Argentinos (ARS) que quiere cambiar: $"));
-        console.log("Divisa seleccionada:", divisaSeleccionada);
-        SeleccionMoneda(tipoMonedaUpper, pesos, divisas);
-
-
-
-    tipoMoneda = prompt(textoTipoMoneda);
-}
-
+//Evento para cambiar el color del boton cuando posiscionamos el cursor por encima
+boton.addEventListener("mouseover",  () => {
+    boton.className = "btn btn-success" ; //dispara cambio de clase
+})
+boton.addEventListener("mouseout",  () => {
+    boton.className = "btn btn-primary" ;//dispara cambio de clase
+})
+boton.addEventListener("click", () => {
+        Cambio();
+});
 /* -------------------------------------------------------------------------------------------------
             Funciones
  -------------------------------------------------------------------------------------------------*/
-function SeleccionMoneda(tipoMonedaUpper, pesos, divisas){
+
+function Cambio(){
+
+    // Obtenemos la cantidad de pesos a cambiar ingresados al input
+    let cantPesos = document.getElementById('pesos').value;
+
+    // Obtenemos el tipo de divisa seleccionada en el select para hacer el cambio
+    let divisa = document.getElementById('divisas');
+    let divisaSeleccionada = divisa.options[divisa.selectedIndex].value;
+
+    // Verificamos la cantidad de pesos y la divisa
+    console.log('Valor del input:', cantPesos);
+    console.log('Valor seleccionado del select:', divisaSeleccionada);
     
-    if (tipoMonedaUpper === "USD"){
-        SeleccionUSD(tipoMonedaUpper, pesos, divisas);
 
-    } else if (tipoMonedaUpper === "EUR"){
-        SeleccionEUR(tipoMonedaUpper, pesos, divisas);
-
-    } else{
-
-        let cotizacion = divisas.find((cot) => cot.codigo === tipoMonedaUpper);
-        console.log(cotizacion.cambio);
-        Cambio(pesos, tipoMonedaUpper, divisas);
-    }
-}
-
-function SeleccionUSD(tipoMonedaUpper, pesos, divisas) {
-    let textotipoUSD = "Ingrese el tipo de dólar al que quiere hacer el cambio: \n\n";
-    textotipoUSD += "Oficial\n";
-    textotipoUSD += "Blue\n";
-    textotipoUSD += "Tarjeta\n";
-    textotipoUSD += "MEP\n";
-    textotipoUSD += "CCL\n";
-    textotipoUSD += "Crypto";
-
-    let tipoUSD = prompt(textotipoUSD);
-    console.log("Cambio seleccionado: " + tipoUSD);
-    let tipoCambio = tipoUSD.toLowerCase().trim();
-    console.log("Tipo de cambio: " + tipoCambio);
-
-    // Buscar el cambio seleccionado en el objeto de la divisa
-    let cotizacion = divisas.find(cot => cot.codigo === tipoMonedaUpper);
-
-    // Verificar si el tipoCambio existe dentro del objeto de cambio de la divisa
-    if (tipoCambio in cotizacion.cambio) {
-        let cambioSeleccionado = cotizacion.cambio[tipoCambio];
-        console.log("Cambio seleccionado:", cambioSeleccionado);
-        Cambio(pesos, tipoMonedaUpper, divisas, tipoCambio);
-    } else {
-        alert("Tipo de cambio no válido. Por favor, seleccione uno válido.");
-        console.log("Tipo de cambio no válido:" + tipoCambio);
-    }
-}
-
-function SeleccionEUR(tipoMonedaUpper, pesos, divisas){
-    let textotipoEUR = "Ingrese el tipo de Euro al que quiere hacer el cambio: \n\n";
-    textotipoEUR += "Oficial\n";
-    textotipoEUR += "Blue";
-    
-    let tipoEUR = prompt(textotipoEUR);
-    console.log("Cambio seleccionado: "+ tipoEUR);
-    let tipoCambio = tipoEUR.toLowerCase().trim();
-    console.log("Tipo de cambio: " + tipoCambio);
-
-    // Buscar el cambio seleccionado en el objeto de la divisa
-    let cotizacion = divisas.find(cot => cot.codigo === tipoMonedaUpper);
-
-    // Verificar si el tipoCambio existe dentro del objeto de cambio de la divisa
-    if (tipoCambio in cotizacion.cambio) {
-        let cambioSeleccionado = cotizacion.cambio[tipoCambio];
-        console.log("Cambio seleccionado:", cambioSeleccionado);
-        Cambio(pesos, tipoMonedaUpper, divisas, tipoCambio);
-    } else {
-        alert("Tipo de cambio no válido. Por favor, seleccione uno válido.");
-        console.log("Tipo de cambio no válido:" + tipoCambio);
-    }
-
-}
-
-function Cambio(pesos, tipoMonedaUpper, divisas, tipoCambio){
-    if(tipoMonedaUpper === "BTC" || tipoMonedaUpper === "ETH" || tipoMonedaUpper === "SOL" || tipoMonedaUpper === "BNB"){
-        let cotizacion = divisas.find((cot) => cot.codigo === tipoMonedaUpper);
-        let cambio = pesos / cotizacion.cambio ;
-        alert("Seleccionó " + cotizacion.nombre);
-        alert("$" + pesos + " pesos son :" + cotizacion.simbolo + " " + cambio.toFixed(8) + " " + cotizacion.codigo);
-
-    }else if(tipoMonedaUpper === "USD" || tipoMonedaUpper === "EUR"){
-        let cotizacion = divisas.find((cot) => cot.codigo === tipoMonedaUpper);
-        let cambio = pesos / cotizacion.cambio[tipoCambio];
-        alert("Seleccionó " + cotizacion.nombre + " " + tipoCambio);
-        alert("$" + pesos + " pesos son :" + cotizacion.simbolo + " " + cambio.toFixed(2) + " " + cotizacion.codigo + " " + tipoCambio);
+    if(divisaSeleccionada === "BTC" || divisaSeleccionada === "ETH" || divisaSeleccionada === "SOL" || divisaSeleccionada === "BNB"){
+        let cotizacion = divisas.find((cot) => cot.codigo === divisaSeleccionada);
+        let cambio = cantPesos / cotizacion.cambio ;
+        console.log("$" + cantPesos + " pesos son :" + cotizacion.simbolo + " " + cambio.toFixed(8) + " " + cotizacion.codigo);
 
     }else{
-        let cotizacion = divisas.find((cot) => cot.codigo === tipoMonedaUpper);
-        let cambio = pesos / cotizacion.cambio ;
-        alert("Seleccionó " + cotizacion.nombre);
-        alert("$" + pesos + " pesos son :" + cotizacion.simbolo + " " + cambio.toFixed(2) + " " + cotizacion.codigo);
-
+        let cotizacion = divisas.find((cot) => cot.codigo === divisaSeleccionada);
+        let cambio = cantPesos / cotizacion.cambio ;
+        console.log("$" + cantPesos + " pesos son :" + cotizacion.simbolo + " " + cambio.toFixed(2) + " " + cotizacion.codigo);
     }
-}
+}   
