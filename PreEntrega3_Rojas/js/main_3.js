@@ -98,7 +98,7 @@
         codigo: "SOL",
         simbolo: "",
         cambio: 160998.81
-    }, 
+    },
     {
         nombre: "BNB",
         codigo: "BNB",
@@ -106,8 +106,8 @@
         cambio: 539324.73
     }
 ];
-
-
+// Array que va a contener como objetos todos las conversiones realizadas en la sesion a modo de historial
+let historial = []
 /* -------------------------------------------------------------------------------------------------
             Eventos
  -------------------------------------------------------------------------------------------------*/
@@ -123,13 +123,13 @@ boton.addEventListener("mouseout",  () => {
 
 //Agregamos el evento click al boton para disparar la función Cambio
 boton.addEventListener("click", () => {
-        Cambio();
+        Cambio(divisas, historial);
 });
 /* -------------------------------------------------------------------------------------------------
             Funciones
  -------------------------------------------------------------------------------------------------*/
-
-function Cambio(){
+//Función que realiza el cambio de pesos a la divisa seleccionada
+function Cambio(divisas, historial){
     let total = document.getElementById("conversion")
 
     // Obtenemos la cantidad de pesos a cambiar ingresados al input
@@ -140,22 +140,45 @@ function Cambio(){
     let divisaSeleccionada = divisa.options[divisa.selectedIndex].value;
 
     // Verificamos la cantidad de pesos y la divisa
-    console.log('Valor del input:', cantPesos);
-    console.log('Valor seleccionado del select:', divisaSeleccionada);
+    //console.log('cantidad de pesos ingresados:', cantPesos);
+    //console.log('divisa seleccionada:', divisaSeleccionada);
     
 
     if(divisaSeleccionada === "BTC" || divisaSeleccionada === "ETH" || divisaSeleccionada === "SOL" || divisaSeleccionada === "BNB"){
         let cotizacion = divisas.find((cot) => cot.codigo === divisaSeleccionada);
         let cambio = cantPesos / cotizacion.cambio ;
-        // Insertar HTML interno
-        total.innerText = `$ ${cantPesos} pesos son : ${cotizacion.simbolo}  ${cambio.toFixed(8)}  ${cotizacion.codigo}`;
-        console.log("$" + cantPesos + " pesos son :" + cotizacion.simbolo + " " + cambio.toFixed(8) + " " + cotizacion.codigo);
 
+        // Actualizamos el contenido del HTML (etiqueta p) con el resultado de la converison
+        total.innerText = `$ ${cantPesos} pesos son : ${cotizacion.simbolo}  ${cambio.toFixed(8)}  ${cotizacion.codigo} (${cotizacion.nombre})`;
+
+        //Agregamos la conversion realizada al array de historial de conversiones
+        historial.push({Pesos:cantPesos, Moneda: cotizacion.codigo, Total:cambio.toFixed(8)});
+
+        //disparo de funcion history
+        history(historial);
+        
     }else{
         let cotizacion = divisas.find((cot) => cot.codigo === divisaSeleccionada);
         let cambio = cantPesos / cotizacion.cambio ;
-         // Insertar HTML interno
-         total.innerText = `$ ${cantPesos} pesos son : ${cotizacion.simbolo}  ${cambio.toFixed(2)}  ${cotizacion.codigo}`;
-        console.log("$" + cantPesos + " pesos son :" + cotizacion.simbolo + " " + cambio.toFixed(2) + " " + cotizacion.codigo);
+
+        // Actualizamos el contenido del HTML (etiqueta p) con el resultado de la converison
+        total.innerText = `$ ${cantPesos} pesos son : ${cotizacion.simbolo}  ${cambio.toFixed(2)}  ${cotizacion.codigo} (${cotizacion.nombre})`;
+
+        //Agregamos la conversion realizada al array de historial de conversiones
+        historial.push({Pesos:cantPesos, Moneda: cotizacion.codigo, Total:cambio.toFixed(2)});
+
+        //disparo de funcion history
+        history(historial);
     }
+}
+
+//Funcion que almacena en el local Storage los cambios realizados a modo de historial
+function history(historial){
+
+    //Opcion #1 localStorage
+    localStorage.setItem(historial, JSON.stringify(historial));
+
+    //Opcion #2 SessionStorage
+    //sessionStorage.setItem(historial, JSON.stringify(historial));
+
 }
