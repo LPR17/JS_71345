@@ -22,6 +22,9 @@
         - Euro Blue => 1 EUR = 1563,84 pesos argentinos
 
     - Libra esterlina (GBP) => 1 GBP = 1195,18 pesos argentinos
+    - Franco suizo (CHF) => 1 CHF = 1048,36 pesos argentinos
+    - Dólar canadiense (CAD) = > 1 CAD = 671,91 pesos argentinos 
+    - Yuan chino (CNY) = > 1 CNY = 127,72 pesos argentinos
     - Yen japonés (JPY) => 1 JPY = 5,95 pesos argentinos
     - Rublo Ruso (RUB) => 1 RUB = 10,54 pesos argentinos
     - Rupia India (INR) => 1 INR = 11,06 pesos argentinos
@@ -29,18 +32,28 @@
     - Ethereum (ETH) => 1 ETH = 3168967,55 pesos argentinos
     - Solana (SOL) => 1 SOL = 160998,81 pesos argentinos
     - BNB (BNB) => 1 BNB = 539324,73 pesos argentinos
+    - Polkadot (DOT) => 1 DOT = 5401,86 pesos argentinos
+    - XRP (XRP) => 1 XRP = 580,23 pesos agentinos
+    - Cardano (ADA) => 1 ADA = 382,89 pesos argentinos
+    - Toncoin (TON) => 1 TON = 1127,11 pesos argentinos
+    - Tron (TRX) => 1 TRX = 124,91 pesos argentinos
+    - Dogecoin (DOGE) => 1 DOGE = 120,77 pesos argentinos
+    - Chainlink (LINK) => 1 LINK = 12633,78 pesos argentinos 
+    - Uniswap (UNI) => 1 UNI = 6978,01 pesos argentinos
     
 
 
 ## Instrucciones de Uso
 
 1. **Descarga y Configuración**
-    - Descargar el repositorio/archivos carpeta `js`( que contiene el archivo `main.js`) e `index.html` .
+    - Clonar el repositorio.
 2. **Abrir la Aplicación**
     - Abrir el archivo `index.html` .
 3. **Seleccionar Moneda**
-    - Elegir a la moneda a la cual se desea hacer la conversion.
     - Ingresa la cantidad de pesos argentinos que desea convertir.
+    - Elegir a la moneda a la cual se desea hacer la conversion.
+    - Presionar boton "convertir"
+
 4. **Visualizar Resultados**
     - Se mostrará la cantidad convertida
         - Para las divisas tradicionales se mostrarán con 2 decimales pero para las criptomonedas hasta 8 decimales

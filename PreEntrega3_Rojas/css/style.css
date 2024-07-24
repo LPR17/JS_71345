@@ -12,10 +12,10 @@ body {
 
 .container {
         max-width: 1200px;
-        background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco con ligera transparencia */
+        background-color: rgba(255, 255, 255, 0.9);
         padding: 30px;
         border-radius: 10px;
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 /*----------------------------------------
         title     
@@ -42,10 +42,10 @@ p {
         text-align: center;
         margin-bottom: 40px;
         color: #000000;
-        background-color: #61616193; /* Color de fondo blanco para el contenido */
+        background-color: #61616193;
         padding: 20px;
         border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave alrededor del contenido */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 /*----------------------------------------
         form
@@ -53,7 +53,7 @@ p {
 form {
         padding: 20px;
         border-radius: 8px;
-        margin-top: 20px; /* Margen superior para separar del título y subtítulo */
+        margin-top: 20px;
     }
 
 /*----------------------------------------

@@ -62,6 +62,24 @@
         codigo: "GBP",
         simbolo: " £ ",
         cambio: 1195.18
+    },
+    {
+        nombre: "Franco Suizo",
+        codigo: "CHF",
+        simbolo: " Fr ",
+        cambio: 1048.36
+    },
+    {
+        nombre: "Dolar Canadiense",
+        codigo: "CAD",
+        simbolo: " $ ",
+        cambio: 671.91
+    }, 
+    {
+        nombre: "Yuan Chino",
+        codigo: "CNY",
+        simbolo: " ¥ ",
+        cambio: 127.72
     }, 
     {
         nombre: "Yen Japonés",
@@ -104,7 +122,56 @@
         codigo: "BNB",
         simbolo: "",
         cambio: 539324.73
+    },
+    {
+        nombre: "Polkadot",
+        codigo: "DOT",
+        simbolo: "",
+        cambio: 5401.86
+    },
+    {
+        nombre: "XRP",
+        codigo: "XRP",
+        simbolo: "",
+        cambio: 580.23
+    },
+    {
+        nombre: "Cardano",
+        codigo: "ADA",
+        simbolo: "",
+        cambio: 382.89
+    },
+    {
+        nombre: "Toncoin",
+        codigo: "TON",
+        simbolo: "",
+        cambio: 1127.11
+    },
+    {
+        nombre: "Tron",
+        codigo: "TRX",
+        simbolo: "",
+        cambio: 124.91
+    },
+    {
+        nombre: "Dogecoin",
+        codigo: "DOGE",
+        simbolo: "",
+        cambio: 120.77
+    },
+    {
+        nombre: "Chainlink",
+        codigo: "LINK",
+        simbolo: "",
+        cambio: 12633.78
+    },
+    {
+        nombre: "Uniswap",
+        codigo: "UNI",
+        simbolo: "",
+        cambio: 6978.01
     }
+    
 ];
 // Array que va a contener como objetos todos las conversiones realizadas en la sesion a modo de historial
 let historial = []
