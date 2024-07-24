@@ -9,51 +9,51 @@
  const divisas = [
     {
         nombre: "Dólar estadounidense ofical",
-        codigo: "USDoficial",
+        codigo: "USD Oficial",
         simbolo: " $ ",
         cambio: 946
     },
     {
         nombre: "Dólar estadounidense Blue",
-        codigo: "USDblue",
+        codigo: "USD Blue",
         simbolo: " $ ",
         cambio: 1445
 
     }, 
     {
         nombre: "Dólar estadounidense tarjeta",
-        codigo: "USDtarjeta",
+        codigo: "USD Tarjeta",
         simbolo: " $ ",
         cambio: 1513.60
     }, 
     {
         nombre: "Dólar MEP",
-        codigo: "USDmep",
+        codigo: "USD MEP",
         simbolo: " $ ",
         cambio: 1334.20
     }, 
     {
         nombre: "Dólar estadounidense contado con liqui",
-        codigo: "USDccl",
+        codigo: "USD CCL",
         simbolo: " $ ",
         cambio: 1338.70
     }, 
     {
         nombre: "Dólar crypto",
-        codigo: "USDcrypto",
+        codigo: "USD Crypto",
         simbolo: " $ ",
         cambio: 1385
         
     }, 
     {
         nombre: "Euro Oficial",
-        codigo: "EURoficial",
+        codigo: "EUR Oficial",
         simbolo: " € ",
         cambio: 1044.22
     },
     {
         nombre: "Euro Blue",
-        codigo: "EURblue",
+        codigo: "EUR Blue",
         simbolo: " € ",
         cambio: 1563.84
     },
@@ -120,6 +120,8 @@ boton.addEventListener("mouseover",  () => {
 boton.addEventListener("mouseout",  () => {
     boton.className = "btn btn-primary" ;//dispara cambio de clase
 })
+
+//Agregamos el evento click al boton para disparar la función Cambio
 boton.addEventListener("click", () => {
         Cambio();
 });
@@ -128,6 +130,7 @@ boton.addEventListener("click", () => {
  -------------------------------------------------------------------------------------------------*/
 
 function Cambio(){
+    let total = document.getElementById("conversion")
 
     // Obtenemos la cantidad de pesos a cambiar ingresados al input
     let cantPesos = document.getElementById('pesos').value;
@@ -144,11 +147,15 @@ function Cambio(){
     if(divisaSeleccionada === "BTC" || divisaSeleccionada === "ETH" || divisaSeleccionada === "SOL" || divisaSeleccionada === "BNB"){
         let cotizacion = divisas.find((cot) => cot.codigo === divisaSeleccionada);
         let cambio = cantPesos / cotizacion.cambio ;
+        // Insertar HTML interno
+        total.innerText = `$ ${cantPesos} pesos son : ${cotizacion.simbolo}  ${cambio.toFixed(8)}  ${cotizacion.codigo}`;
         console.log("$" + cantPesos + " pesos son :" + cotizacion.simbolo + " " + cambio.toFixed(8) + " " + cotizacion.codigo);
 
     }else{
         let cotizacion = divisas.find((cot) => cot.codigo === divisaSeleccionada);
         let cambio = cantPesos / cotizacion.cambio ;
+         // Insertar HTML interno
+         total.innerText = `$ ${cantPesos} pesos son : ${cotizacion.simbolo}  ${cambio.toFixed(2)}  ${cotizacion.codigo}`;
         console.log("$" + cantPesos + " pesos son :" + cotizacion.simbolo + " " + cambio.toFixed(2) + " " + cotizacion.codigo);
     }
-}   
+}
